@@ -27,7 +27,7 @@ export default function Home() {
           <li className="neon-pill">Next.js / React</li>
           <li className="neon-pill">Node.js / Express</li>
           <li className="neon-pill">PostgreSQL / NeonDB / Prisma / Supabase</li>
-          <li className="neon-pill">REST / GraphQL / WebSocket</li>
+          <li className="neon-pill">REST / WebSocket</li>
           <li className="neon-pill">Vercel / Docker / CI/CD</li>
         </ul>
       </Section>

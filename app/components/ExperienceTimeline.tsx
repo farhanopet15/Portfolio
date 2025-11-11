@@ -1,8 +1,10 @@
+"use client";
+
 const experience = [
   {
     period: "2025 — Present",
     role: "FullStack Developer",
-    company: "PT.Dumbways Indonesia",
+    company: "PT. Dumbways Indonesia",
     detail:
       "Developed full-stack web applications using Next.js, TailwindCSS, and Node.js with a focus on clean design and optimized performance.",
   },
@@ -25,21 +27,30 @@ const experience = [
 export default function ExperienceTimeline() {
   return (
     <div className="relative">
-      <div className="absolute left-1.5 top-0 bottom-0 w-px bg-slate-700/60" />
-      <ul className="space-y-6 pl-6">
+      {/* Garis Vertikal */}
+      <div className="absolute left-[8px] top-0 bottom-0 w-px bg-slate-700/50" />
+
+      <ul className="space-y-8 pl-8">
         {experience.map((item, idx) => (
           <li key={idx} className="relative">
-            <div className="absolute -left-2 top-1 h-3 w-3 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
-            <p className="text-[9px] uppercase tracking-[0.18em] text-cyan-400/80">
-              {item.period}
-            </p>
-            <p className="text-sm font-semibold text-slate-50 mt-0.5">
-              {item.role} ·{" "}
-              <span className="text-slate-400 font-normal">{item.company}</span>
-            </p>
-            <p className="text-[11px] text-slate-400 mt-1 max-w-2xl">
-              {item.detail}
-            </p>
+            {/* Titik */}
+            <div className="absolute left-[-4px] top-[3px] h-[6px] w-[8px] rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+
+            {/* Isi Konten */}
+            <div className="ml-2">
+              <p className="text-[10px] uppercase tracking-[0.18em] text-cyan-400/80 mb-1">
+                {item.period}
+              </p>
+              <p className="text-sm font-semibold text-slate-50 leading-snug">
+                {item.role} ·{" "}
+                <span className="text-slate-400 font-normal">
+                  {item.company}
+                </span>
+              </p>
+              <p className="text-[11px] text-slate-400 mt-1 max-w-2xl leading-relaxed">
+                {item.detail}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
