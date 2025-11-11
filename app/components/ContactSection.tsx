@@ -46,9 +46,6 @@ export default function ContactSection() {
         >
           Send Transmission
         </button>
-        <p className="text-[8px] text-slate-500 mt-2">
-          For real projects, connect this form to your API / email service.
-        </p>
       </form>
 
       <div className="space-y-2 text-[10px] text-slate-300">

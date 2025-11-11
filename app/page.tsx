@@ -14,10 +14,10 @@ export default function Home() {
 
       <Section id="about" label="About" title="Ahmad Farhan Walidain S.H">
         <p className="text-slate-300 max-w-3xl">
-          I&apos;m a full stack developer focused on building immersive, dark,
-          and futuristic experiences for the web. From high-traffic APIs to
-          cinematic landing pages, I design systems that feel smooth, secure,
-          and slightly unsettling — in the best possible way.
+          I’m a full-stack developer specializing in building modern,
+          high-performance web ecosystems. My focus lies in delivering
+          immersive, visually striking experiences that combine technical rigor,
+          security, and refined design aesthetics.
         </p>
       </Section>
 
@@ -28,7 +28,7 @@ export default function Home() {
           <li className="neon-pill">Node.js / Express</li>
           <li className="neon-pill">PostgreSQL / NeonDB / Prisma / Supabase</li>
           <li className="neon-pill">REST / WebSocket</li>
-          <li className="neon-pill">Vercel / Docker / CI/CD</li>
+          <li className="neon-pill">Vercel / Netlify</li>
         </ul>
       </Section>
 

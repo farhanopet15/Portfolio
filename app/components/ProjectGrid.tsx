@@ -1,23 +1,23 @@
 const projects = [
   {
     title: "AutoVerse",
-    tag: "Real-time Dashboard",
+    tag: "Real-Time Data Intelligence",
     tech: "Next.js · TypeScript",
-    desc: "Data management with interactive visualizations.",
+    desc: "An interactive dashboard for real-time analytics and intelligent data visualization.",
     link: "https://autoverse-fe.vercel.app/",
   },
   {
     title: "Digital Business Card",
-    tag: "Secure API Platform",
+    tag: "Identity Platform",
     tech: "Next.js · Express",
-    desc: "A simple and elegant web app for creating digital business cards.",
+    desc: "A sleek, minimal platform for creating and sharing digital business identities securely.",
     link: "https://digital-business-card-fe.vercel.app/",
   },
   {
     title: "NetWorkers",
-    tag: "Headless Storefront",
+    tag: "Community Network System",
     tech: "Next.js · N8N · Docker",
-    desc: "A platform that helps users connect with local workers easily.",
+    desc: "A digital ecosystem connecting users with local professionals through a seamless interface.",
     link: "https://net-workers.netlify.app/",
   },
 ];

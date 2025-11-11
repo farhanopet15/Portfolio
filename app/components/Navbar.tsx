@@ -56,12 +56,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#projects"
-            className="px-4 py-1.5 text-[10px] rounded-full border border-cyan-400/70 text-cyan-300 hover:bg-cyan-400/10 transition"
-          >
-            View Work
-          </a>
         </div>
 
         <button
