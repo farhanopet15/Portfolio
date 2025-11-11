@@ -31,7 +31,7 @@ const certificates: Certificate[] = [
   {
     title: "E-Dumbways",
     issuer: "Dumbways Indonesia",
-    year: "2022",
+    year: "2025",
     image: "/E-Dumbways.jpg",
     description:
       "Full-stack web development certification focusing on JavaScript, React, Node.js, and deployment workflows — emphasizing modern coding standards, Git collaboration, and scalable app development.",

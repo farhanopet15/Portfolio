@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="flex max-w-xl flex-col items-center gap-5 text-center lg:items-end lg:text-right">
           <h1 className="text-5xl lg:text-6xl font-semibold tracking-[0.12em]">
             <span className="text-slate-100">Ahmad</span>{" "}
-            <span className="text-cyan-400">Farhan Walidian</span>
+            <span className="text-cyan-400">Farhan Walidain</span>
           </h1>
           <p className="text-[11px] text-slate-300 max-w-md"></p>
           <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-end">
