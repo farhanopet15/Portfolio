@@ -27,16 +27,13 @@ const experience = [
 export default function ExperienceTimeline() {
   return (
     <div className="relative">
-      {/* Garis Vertikal */}
       <div className="absolute left-[8px] top-0 bottom-0 w-px bg-slate-700/50" />
 
       <ul className="space-y-8 pl-8">
         {experience.map((item, idx) => (
           <li key={idx} className="relative">
-            {/* Titik */}
             <div className="absolute left-[-4px] top-[3px] h-[6px] w-[8px] rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
 
-            {/* Isi Konten */}
             <div className="ml-2">
               <p className="text-[10px] uppercase tracking-[0.18em] text-cyan-400/80 mb-1">
                 {item.period}

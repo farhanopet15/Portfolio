@@ -6,7 +6,6 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[90vh] items-center justify-center pt-24 pb-16"
     >
-      {/* Neon glows */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 top-0 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
         <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-orange-500/5 blur-3xl" />
@@ -30,9 +29,6 @@ export default function Hero() {
         </div>
 
         <div className="flex max-w-xl flex-col items-center gap-5 text-center lg:items-end lg:text-right">
-          {/* <p className="text-[10px] uppercase tracking-[0.25em] text-cyan-400/80">
-            Welcome to the
-          </p> */}
           <h1 className="text-5xl lg:text-6xl font-semibold tracking-[0.12em]">
             <span className="text-slate-100">Ahmad</span>{" "}
             <span className="text-cyan-400">Farhan Walidian</span>
