@@ -24,11 +24,11 @@ export default function Home() {
       <Section id="skills" label="Core Stack" title="What I Build With">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-slate-200 text-sm">
           <li className="neon-pill">TypeScript / JavaScript</li>
-          <li className="neon-pill">Next.js / React</li>
-          <li className="neon-pill">Node.js / Express</li>
-          <li className="neon-pill">PostgreSQL / NeonDB / Prisma / Supabase</li>
-          <li className="neon-pill">REST / WebSocket</li>
-          <li className="neon-pill">Vercel / Netlify</li>
+          <li className="neon-pill">Next.js / React.js</li>
+          <li className="neon-pill">Node.js / Express / Golang</li>
+          <li className="neon-pill">MYSQL / PostgreSQL / Prisma / Supabase</li>
+          <li className="neon-pill">REST / WebSocket / Jest / Supertest</li>
+          <li className="neon-pill">Vercel / Netlify / Cloudfrale / Docker</li>
         </ul>
       </Section>
 
