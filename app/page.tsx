@@ -26,7 +26,7 @@ export default function Home() {
           <li className="neon-pill">TypeScript / JavaScript</li>
           <li className="neon-pill">Next.js / React.js</li>
           <li className="neon-pill">Node.js / Express / Golang</li>
-          <li className="neon-pill">MYSQL / PostgreSQL / Prisma / Supabase</li>
+          <li className="neon-pill">MYSQL / PostgreSQL / Prisma</li>
           <li className="neon-pill">REST / WebSocket / Jest / Supertest</li>
           <li className="neon-pill">Vercel / Netlify / Cloudfrale / Docker</li>
         </ul>
