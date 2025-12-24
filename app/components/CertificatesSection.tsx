@@ -37,20 +37,20 @@ const certificates: Certificate[] = [
       "Full-stack web development certification focusing on JavaScript, React, Node.js, and deployment workflows — emphasizing modern coding standards, Git collaboration, and scalable app development.",
   },
   {
-    title: "E-IMBSkill",
+    title: "E-IBMSkill",
     issuer: "International Business Machines Corporation",
     year: "2025",
     image: "/E-IMBSkill.png",
     description:
-      "IBM Grenite Models for Software Development",
+      "Use Generate AI for Software Development",
   },
   {
-    title: "E-IMBSkill",
+    title: "E-IBMSkill",
     issuer: "International Business Machines Corporation",
     year: "2025",
     image: "/E-IMBSkill1.png",
     description:
-      "Use Generate AI for Software Development",
+      "IBM Granite Models for Software Development",
   },
 ];
 
