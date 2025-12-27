@@ -23,7 +23,7 @@ export default function Section({ id, label, title, children }: SectionProps) {
           </h2>
         </div>
         <div className="hidden text-[8px] text-slate-500 sm:block">
-          SCROLL • EXPLORE • DEPLOY
+          THINK • BUILD • DEPLOY
         </div>
       </div>
       <div className="text-sm leading-relaxed">{children}</div>
