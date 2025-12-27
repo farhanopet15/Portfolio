@@ -16,7 +16,7 @@ const certificates: Certificate[] = [
     title: "E-MicrosoftOffice",
     issuer: "PT. Darnawangsa Sangga Amerta",
     year: "2024",
-    image: "/e-microsoftoffice.jpg",
+    image: "/E-MicrosoftOffice.jpg",
     description:
       "Certification demonstrating proficiency in Microsoft Office applications such as Word, Excel, and PowerPoint — covering document formatting, data processing, and presentation design for professional use.",
   },
@@ -24,7 +24,7 @@ const certificates: Certificate[] = [
     title: "E-Wordpress",
     issuer: "PT. Darnawangsa Sangga Amerta",
     year: "2024",
-    image: "/e-wordpress.jpg",
+    image: "/E-Wordpress.jpg",
     description:
       "Certificate of competence in creating and managing dynamic websites using WordPress CMS, including theme customization, plugin configuration, and SEO optimization.",
   },
@@ -32,7 +32,7 @@ const certificates: Certificate[] = [
     title: "E-Dumbways",
     issuer: "Dumbways Indonesia",
     year: "2025",
-    image: "/e-dumbways.jpg",
+    image: "/E-Dumbways.jpg",
     description:
       "Full-stack web development certification focusing on JavaScript, React, Node.js, and deployment workflows — emphasizing modern coding standards, Git collaboration, and scalable app development.",
   },
@@ -40,15 +40,15 @@ const certificates: Certificate[] = [
     title: "E-IBM Skill",
     issuer: "International Business Machines Corporation",
     year: "2025",
-    image: "/e-ibm-skill.png",
+    image: "/E-IBM-SKill.png",
     description:
       "Use Generate AI for Software Development",
   },
   {
-    title: "E-IBM Skill",
+    title: "E-IBM SKill",
     issuer: "International Business Machines Corporation",
     year: "2025",
-    image: "/e-ibm-skill1.png",
+    image: "/E-IBM-Skill1.png",
     description:
       "IBM Granite Models for Software Development",
   },
