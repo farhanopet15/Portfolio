@@ -27,11 +27,14 @@ export default function TerminalWidget() {
     },
   ]);
 
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const outputContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    // Only scroll internally inside the terminal box, never scrolling the webpage window
+    if (outputContainerRef.current) {
+      outputContainerRef.current.scrollTop = outputContainerRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (e: React.FormEvent) => {
@@ -166,7 +169,7 @@ export default function TerminalWidget() {
       </div>
 
       {/* Terminal Output Stream */}
-      <div className="space-y-3 max-h-[260px] overflow-y-auto pr-1">
+      <div ref={outputContainerRef} className="space-y-3 max-h-[260px] overflow-y-auto pr-1">
         {history.map((item, index) => (
           <div key={index} className="space-y-1">
             <div className="flex items-center gap-1.5 text-emerald-400 font-bold">
@@ -176,7 +179,6 @@ export default function TerminalWidget() {
             <div className="pl-4">{item.output}</div>
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* Interactive Command Input Line */}
