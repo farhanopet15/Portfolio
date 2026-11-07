@@ -9,6 +9,7 @@ import MatrixBackground from "./components/interactive/MatrixBackground";
 import SpotlightGlow from "./components/interactive/SpotlightGlow";
 import CustomCursor from "./components/interactive/CustomCursor";
 import TiltCard from "./components/interactive/TiltCard";
+import TerminalWidget from "./components/interactive/TerminalWidget";
 import { 
   Code, 
   Server, 
@@ -136,6 +137,11 @@ export default function Home() {
               </p>
             </TiltCard>
           </div>
+        </div>
+
+        {/* Interactive Shell Console */}
+        <div className="mt-6">
+          <TerminalWidget />
         </div>
       </Section>
 
