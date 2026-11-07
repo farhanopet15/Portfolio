@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Terminal, Shield, Cpu, Lock, Binary } from "lucide-react";
+import { ArrowUpRight, Terminal, Shield, Binary } from "lucide-react";
 import TypewriterText from "./interactive/TypewriterText";
 import MagneticButton from "./interactive/MagneticButton";
 import TiltCard from "./interactive/TiltCard";

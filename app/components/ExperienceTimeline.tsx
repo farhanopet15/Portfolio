@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Calendar, Building2, ShieldAlert, Cpu } from "lucide-react";
+import { Terminal, Calendar, Building2, Cpu } from "lucide-react";
 import TiltCard from "./interactive/TiltCard";
 
 const experience = [

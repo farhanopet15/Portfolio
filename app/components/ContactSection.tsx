@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Send, CheckCircle2, Terminal, Clock, ShieldCheck, Radio } from "lucide-react";
+import { Mail, Send, CheckCircle2, Clock, ShieldCheck, Radio, MessageCircle } from "lucide-react";
 import MagneticButton from "./interactive/MagneticButton";
 import TiltCard from "./interactive/TiltCard";
 
@@ -25,18 +25,31 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
 
+  // Read WhatsApp number from env or fallback to 6289646611059
+  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6289646611059";
+  // Ensure formatted without leading 0 for wa.me API
+  const cleanNumber = rawNumber.replace(/[^0-9]/g, "").replace(/^0/, "62");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
 
+    const textPayload = `*TRANS-ID: #NX-UPLINK*\n` +
+      `━━━━━━━━━━━━━━━━━━━\n` +
+      `*Callsign / Name:* ${formData.name}\n` +
+      `*Uplink Email:* ${formData.email}\n\n` +
+      `*Payload Brief:*\n${formData.message}\n` +
+      `━━━━━━━━━━━━━━━━━━━\n` +
+      `_Transmitted via Farhan Opet Cyber Portfolio_`;
+
+    const encodedText = encodeURIComponent(textPayload);
+    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedText}`;
+
     setTimeout(() => {
       setStatus("sent");
-      const subject = encodeURIComponent(`Encrypted Transmission from ${formData.name || "Operative"}`);
-      const body = encodeURIComponent(
-        `Identity: ${formData.name}\nUplink: ${formData.email}\n\nPayload:\n${formData.message}`
-      );
-      window.location.href = `mailto:opet.mxcc@gmail.com?subject=${subject}&body=${body}`;
-    }, 600);
+      // Direct dispatch to WhatsApp
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }, 400);
   };
 
   return (
@@ -50,7 +63,7 @@ export default function ContactSection() {
               [ TRANSMIT_ENCRYPTED_PAYLOAD ]
             </h3>
           </div>
-          <span className="text-[10px] text-slate-500">PORT: 443 // SSL_SECURE</span>
+          <span className="text-[10px] text-slate-500">DISPATCH: WHATSAPP_API</span>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
@@ -108,12 +121,12 @@ export default function ContactSection() {
                 {status === "sent" ? (
                   <>
                     <CheckCircle2 className="w-4 h-4 text-black" />
-                    <span>PAYLOAD_DISPATCHED!</span>
+                    <span>OPENING_WHATSAPP...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    <span>{status === "submitting" ? "TRANSMITTING..." : "> EXECUTE_DISPATCH"}</span>
+                    <span>{status === "submitting" ? "CONNECTING..." : "> EXECUTE_DISPATCH"}</span>
                   </>
                 )}
               </button>
@@ -131,6 +144,22 @@ export default function ContactSection() {
           </p>
 
           <div className="space-y-3">
+            {/* Direct WhatsApp Channel */}
+            <a
+              href={`https://wa.me/${cleanNumber}?text=Halo%20Farhan,%20saya%20tertarik%20bekerja%20sama%20dengan%20Anda.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs text-slate-200 hover:border-emerald-400 hover:bg-emerald-500/20 transition-all group shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+            >
+              <div className="rounded border border-emerald-500/40 bg-black/80 p-2 text-emerald-400 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.6)]">
+                <MessageCircle className="w-4 h-4" />
+              </div>
+              <div className="truncate">
+                <p className="text-[9px] uppercase tracking-wider text-emerald-300 font-bold">WHATSAPP_DIRECT</p>
+                <p className="font-mono text-emerald-400 text-xs">+62 896-4661-1059</p>
+              </div>
+            </a>
+
             <a
               href="mailto:opet.mxcc@gmail.com"
               className="flex items-center gap-3 rounded border border-emerald-500/20 bg-black/50 p-3 text-xs text-slate-200 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all group"
@@ -177,7 +206,7 @@ export default function ContactSection() {
 
           <div className="mt-4 pt-3 border-t border-emerald-500/15 flex items-center gap-2 text-[10px] text-slate-400">
             <Clock className="w-3.5 h-3.5 text-emerald-400" />
-            <span>ENCRYPTED_LATENCY: &lt; 24 HOURS</span>
+            <span>DIRECT_DISPATCH: INSTANT_RESPONSE</span>
           </div>
         </TiltCard>
       </div>

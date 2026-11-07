@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Terminal, Code2, Sparkles } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import TiltCard from "./interactive/TiltCard";
 
 const projects = [

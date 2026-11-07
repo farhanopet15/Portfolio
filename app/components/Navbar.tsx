@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#about", label: "01.ABOUT" },

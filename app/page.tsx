@@ -18,11 +18,9 @@ import {
   Cloud, 
   Terminal, 
   ShieldCheck, 
-  Cpu, 
   Binary,
   Radio,
-  Lock,
-  GitBranch
+  Lock
 } from "lucide-react";
 
 const skillCategories = [

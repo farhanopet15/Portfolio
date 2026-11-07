@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Terminal, Shield, Sparkles, CornerDownLeft } from "lucide-react";
+import { Shield, CornerDownLeft } from "lucide-react";
 
 interface CommandHistory {
   command: string;

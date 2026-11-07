@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export default function SpotlightGlow() {
-  const [mounted, setMounted] = useState(false);
   const mouseX = useMotionValue(-500);
   const mouseY = useMotionValue(-500);
 
@@ -13,7 +12,6 @@ export default function SpotlightGlow() {
   const smoothY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
-    setMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -22,8 +20,6 @@ export default function SpotlightGlow() {
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
-
-  if (!mounted) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
