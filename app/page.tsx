@@ -221,7 +221,7 @@ export default function Home() {
           </div>
 
           <p className="text-[11px] text-slate-400">
-            © {new Date().getFullYear()} Ahmad Farhan Walidain. Engineered in the dark with Next.js 16 & Cyber Security Protocols.
+            © {new Date().getFullYear()} Farhan Opet. All Rights Reserved.
           </p>
         </div>
       </footer>

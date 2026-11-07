@@ -34,11 +34,11 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Bottom Floating Stack Tag */}
+          {/* Top-Right Floating Stack Tag */}
           <motion.div
             animate={{ y: [5, -5, 5] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            className="absolute -bottom-5 -right-3 z-20 flex items-center gap-2 rounded-lg border border-cyan-400/40 bg-black/80 px-3.5 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] font-mono"
+            className="absolute -top-4 -right-3 z-20 flex items-center gap-2 rounded-lg border border-cyan-400/40 bg-black/80 px-3.5 py-1.5 backdrop-blur-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] font-mono"
           >
             <Binary className="w-3.5 h-3.5 text-cyan-400" />
             <span className="text-[10px] font-semibold text-cyan-300 tracking-wider">
@@ -66,8 +66,8 @@ export default function Hero() {
             </div>
           </TiltCard>
 
-          {/* Status Root Badge */}
-          <div className="absolute -bottom-3 left-6 z-20 flex items-center gap-2 rounded-full border border-emerald-400/50 bg-black/90 px-4 py-1 text-[9px] uppercase tracking-[0.2em] text-emerald-400 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.35)] font-mono">
+          {/* Status Root Badge Centered at Bottom */}
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap flex items-center gap-2 rounded-full border border-emerald-400/50 bg-black/95 px-4 py-1.5 text-[9px] uppercase tracking-[0.2em] text-emerald-400 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.35)] font-mono">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
             <span>[ACCESS: ROOT] // JR. FULL STACK DEV</span>
           </div>
