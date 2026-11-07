@@ -40,7 +40,7 @@ export default function ContactSection() {
       `*Uplink Email:* ${formData.email}\n\n` +
       `*Payload Brief:*\n${formData.message}\n` +
       `━━━━━━━━━━━━━━━━━━━\n` +
-      `_Transmitted via Farhan Opet Cyber Portfolio_`;
+      `_via portfolio farhan_`;
 
     const encodedText = encodeURIComponent(textPayload);
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedText}`;
