@@ -15,7 +15,6 @@ export default function CustomCursor() {
   const smoothY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Check if device has fine pointer (mouse, not touch)
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const moveCursor = (e: MouseEvent) => {
@@ -55,9 +54,9 @@ export default function CustomCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden hidden md:block">
-      {/* Center glowing dot */}
+      {/* Center glowing hacker green point */}
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,1)]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,1)]"
         style={{
           x: cursorX,
           y: cursorY,
@@ -66,18 +65,19 @@ export default function CustomCursor() {
         }}
       />
 
-      {/* Trailing smooth ring */}
+      {/* Trailing Cyber Reticle */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-cyan-400/50 pointer-events-none"
+        className="fixed top-0 left-0 rounded-full border border-emerald-400/60 pointer-events-none"
         animate={{
-          width: isHovered ? 52 : 32,
-          height: isHovered ? 52 : 32,
+          width: isHovered ? 48 : 28,
+          height: isHovered ? 48 : 28,
+          rotate: isHovered ? 90 : 0,
           backgroundColor: isHovered
-            ? "rgba(34, 211, 238, 0.12)"
-            : "rgba(34, 211, 238, 0.03)",
+            ? "rgba(16, 185, 129, 0.12)"
+            : "rgba(16, 185, 129, 0.02)",
           borderColor: isHovered
-            ? "rgba(34, 211, 238, 0.9)"
-            : "rgba(34, 211, 238, 0.4)",
+            ? "rgba(16, 185, 129, 0.9)"
+            : "rgba(16, 185, 129, 0.4)",
         }}
         transition={{ type: "spring", stiffness: 350, damping: 25 }}
         style={{

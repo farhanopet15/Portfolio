@@ -3,49 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --font-space-grotesk: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-space-grotesk: system-ui, -apple-system, BlinkMacSystemFont, "Courier New", monospace;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #030307;
+  background-color: #030508;
   color-scheme: dark;
 }
 
 body {
   font-family: var(--font-space-grotesk);
-  background-color: #030307;
+  background-color: #030508;
   overflow-x: hidden;
+  color: #e2e8f0;
 }
 
-/* Sleek Dark Motorsport Scrollbar */
+/* Hacker Terminal Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030307;
+  background: #030508;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ef4444 0%, #22d3ee 100%);
-  border-radius: 9999px;
-  border: 2px solid #030307;
+  background: linear-gradient(180deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #f87171 0%, #38bdf8 100%);
+  background: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+}
+
+/* Cyber Selection */
+::selection {
+  background-color: #10b981;
+  color: #000000;
 }
 
 /* Glassmorphism helpers */
 .glass-panel {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(3, 5, 8, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .glass-panel-hover:hover {
-  border-color: rgba(34, 211, 238, 0.4);
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
 }

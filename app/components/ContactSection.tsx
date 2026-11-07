@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Send, CheckCircle2, MessageSquare, Clock } from "lucide-react";
+import { Mail, Send, CheckCircle2, Terminal, Clock, ShieldCheck, Radio } from "lucide-react";
 import MagneticButton from "./interactive/MagneticButton";
 import TiltCard from "./interactive/TiltCard";
 
@@ -29,70 +29,72 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus("submitting");
 
-    // Open mailto fallback with the provided project brief
     setTimeout(() => {
       setStatus("sent");
-      const subject = encodeURIComponent(`Project Inquiry from ${formData.name || "Client"}`);
+      const subject = encodeURIComponent(`Encrypted Transmission from ${formData.name || "Operative"}`);
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nProject Brief:\n${formData.message}`
+        `Identity: ${formData.name}\nUplink: ${formData.email}\n\nPayload:\n${formData.message}`
       );
       window.location.href = `mailto:opet.mxcc@gmail.com?subject=${subject}&body=${body}`;
-    }, 700);
+    }, 600);
   };
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1.8fr,1.2fr] items-start">
-      {/* Contact Form with Frosted Glassmorphism */}
-      <TiltCard glowColor="rgba(34, 211, 238, 0.15)" className="p-6 border border-white/10 bg-black/40 backdrop-blur-xl">
-        <div className="mb-5 flex items-center gap-2">
-          <MessageSquare className="w-4 h-4 text-cyan-400" />
-          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-100">
-            Transmit Signal
-          </h3>
+    <div className="grid gap-8 lg:grid-cols-[1.8fr,1.2fr] items-start font-mono">
+      {/* Terminal Contact Form with Cyber Aesthetics */}
+      <TiltCard glowColor="rgba(16, 185, 129, 0.15)" className="p-6 border border-emerald-500/20 bg-black/60 backdrop-blur-xl">
+        <div className="mb-5 flex items-center justify-between pb-3 border-b border-emerald-500/20">
+          <div className="flex items-center gap-2">
+            <Radio className="w-4 h-4 text-emerald-400 animate-pulse" />
+            <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              [ TRANSMIT_ENCRYPTED_PAYLOAD ]
+            </h3>
+          </div>
+          <span className="text-[10px] text-slate-500">PORT: 443 // SSL_SECURE</span>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="block mb-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                Your Identity / Name
+              <label className="block mb-1.5 text-[10px] uppercase text-emerald-300">
+                &gt; ENTER_CALLSIGN_NAME:
               </label>
               <input
                 required
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Ahmad Walidain"
-                className="w-full rounded-xl bg-black/50 border border-white/10 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(34,211,238,0.25)]"
+                placeholder="Agent / Client Name"
+                className="w-full rounded bg-black/70 border border-emerald-500/30 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-emerald-400 focus:shadow-[0_0_20px_rgba(16,185,129,0.3)] font-mono"
               />
             </div>
 
             <div>
-              <label className="block mb-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400">
-                Return Frequency / Email
+              <label className="block mb-1.5 text-[10px] uppercase text-emerald-300">
+                &gt; RETURN_UPLINK_EMAIL:
               </label>
               <input
                 required
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="client@enterprise.com"
-                className="w-full rounded-xl bg-black/50 border border-white/10 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(34,211,238,0.25)]"
+                placeholder="operative@domain.com"
+                className="w-full rounded bg-black/70 border border-emerald-500/30 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-emerald-400 focus:shadow-[0_0_20px_rgba(16,185,129,0.3)] font-mono"
               />
             </div>
           </div>
 
           <div>
-            <label className="block mb-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400">
-              Transmission Content / Project Brief
+            <label className="block mb-1.5 text-[10px] uppercase text-emerald-300">
+              &gt; PAYLOAD_BRIEF / ARCHITECTURE_REQUIREMENTS:
             </label>
             <textarea
               required
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Tell me about your product requirements, target architecture, and timeline..."
-              className="w-full rounded-xl bg-black/50 border border-white/10 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(34,211,238,0.25)] resize-none"
+              placeholder="State mission parameters, target stack, and delivery timeline..."
+              className="w-full rounded bg-black/70 border border-emerald-500/30 px-4 py-3 text-xs text-slate-100 outline-none transition-all focus:border-emerald-400 focus:shadow-[0_0_20px_rgba(16,185,129,0.3)] resize-none font-mono"
             />
           </div>
 
@@ -101,17 +103,17 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="group relative flex items-center gap-2 rounded-full bg-cyan-400 px-7 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:bg-cyan-300 transition-all disabled:opacity-50"
+                className="group relative flex items-center gap-2 rounded bg-emerald-500 px-7 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:bg-emerald-400 transition-all disabled:opacity-50"
               >
                 {status === "sent" ? (
                   <>
                     <CheckCircle2 className="w-4 h-4 text-black" />
-                    <span>Signal Prepared!</span>
+                    <span>PAYLOAD_DISPATCHED!</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                    <span>{status === "submitting" ? "Transmitting..." : "Send Transmission"}</span>
+                    <span>{status === "submitting" ? "TRANSMITTING..." : "> EXECUTE_DISPATCH"}</span>
                   </>
                 )}
               </button>
@@ -120,24 +122,25 @@ export default function ContactSection() {
         </form>
       </TiltCard>
 
-      {/* Direct Channels */}
+      {/* Direct Uplinks */}
       <div className="space-y-4">
-        <TiltCard glowColor="rgba(34, 211, 238, 0.12)" className="p-5 border border-white/10 bg-black/40 backdrop-blur-xl">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-cyan-400 font-semibold mb-3">
-            Direct Uplinks
+        <TiltCard glowColor="rgba(16, 185, 129, 0.12)" className="p-5 border border-emerald-500/20 bg-black/60 backdrop-blur-xl">
+          <p className="text-[11px] uppercase tracking-wider text-emerald-400 font-bold mb-3 flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4" />
+            <span>[AUTHENTICATED_CHANNELS]</span>
           </p>
 
           <div className="space-y-3">
             <a
               href="mailto:opet.mxcc@gmail.com"
-              className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3 text-xs text-slate-200 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all group"
+              className="flex items-center gap-3 rounded border border-emerald-500/20 bg-black/50 p-3 text-xs text-slate-200 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all group"
             >
-              <div className="rounded-lg border border-white/10 bg-black/50 p-2 text-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.5)]">
+              <div className="rounded border border-emerald-500/30 bg-black/80 p-2 text-emerald-400 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.6)]">
                 <Mail className="w-4 h-4" />
               </div>
               <div className="truncate">
-                <p className="text-[9px] uppercase tracking-wider text-slate-500">Email Relay</p>
-                <p className="font-mono text-cyan-300 text-xs">opet.mxcc@gmail.com</p>
+                <p className="text-[9px] uppercase tracking-wider text-slate-500">MAIL_RELAY</p>
+                <p className="font-mono text-emerald-300 text-xs">opet.mxcc@gmail.com</p>
               </div>
             </a>
 
@@ -145,14 +148,14 @@ export default function ContactSection() {
               href="https://github.com/farhanopet15"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3 text-xs text-slate-200 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all group"
+              className="flex items-center gap-3 rounded border border-emerald-500/20 bg-black/50 p-3 text-xs text-slate-200 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all group"
             >
-              <div className="rounded-lg border border-white/10 bg-black/50 p-2 text-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.5)]">
+              <div className="rounded border border-emerald-500/30 bg-black/80 p-2 text-emerald-400 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.6)]">
                 <GithubIcon className="w-4 h-4" />
               </div>
               <div className="truncate">
-                <p className="text-[9px] uppercase tracking-wider text-slate-500">Code Repository</p>
-                <p className="font-mono text-cyan-300 text-xs">github.com/farhanopet15</p>
+                <p className="text-[9px] uppercase tracking-wider text-slate-500">SOURCE_REPOSITORY</p>
+                <p className="font-mono text-emerald-300 text-xs">github.com/farhanopet15</p>
               </div>
             </a>
 
@@ -160,21 +163,21 @@ export default function ContactSection() {
               href="https://linkedin.com/in/ahmadfarhanwalidain"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3 text-xs text-slate-200 hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all group"
+              className="flex items-center gap-3 rounded border border-emerald-500/20 bg-black/50 p-3 text-xs text-slate-200 hover:border-emerald-400/50 hover:bg-emerald-500/10 transition-all group"
             >
-              <div className="rounded-lg border border-white/10 bg-black/50 p-2 text-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.5)]">
+              <div className="rounded border border-emerald-500/30 bg-black/80 p-2 text-emerald-400 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.6)]">
                 <LinkedinIcon className="w-4 h-4" />
               </div>
               <div className="truncate">
-                <p className="text-[9px] uppercase tracking-wider text-slate-500">Professional Network</p>
-                <p className="font-mono text-cyan-300 text-xs">linkedin.com/in/ahmadfarhanwalidain</p>
+                <p className="text-[9px] uppercase tracking-wider text-slate-500">PROFESSIONAL_NETWORK</p>
+                <p className="font-mono text-emerald-300 text-xs">linkedin.com/in/ahmadfarhanwalidain</p>
               </div>
             </a>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-white/5 flex items-center gap-2 text-[10px] text-slate-400">
-            <Clock className="w-3.5 h-3.5 text-cyan-400/80" />
-            <span>Average response window: &lt; 24 hours</span>
+          <div className="mt-4 pt-3 border-t border-emerald-500/15 flex items-center gap-2 text-[10px] text-slate-400">
+            <Clock className="w-3.5 h-3.5 text-emerald-400" />
+            <span>ENCRYPTED_LATENCY: &lt; 24 HOURS</span>
           </div>
         </TiltCard>
       </div>

@@ -27,9 +27,9 @@ export default function SpotlightGlow() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      {/* Primary cyan ambient light following mouse */}
+      {/* Primary Cyber Emerald Ambient Flashlight */}
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[140px] opacity-25 bg-gradient-to-r from-cyan-500/40 via-sky-500/30 to-blue-600/20"
+        className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-20 bg-gradient-to-r from-emerald-500/40 via-teal-500/30 to-cyan-500/20"
         style={{
           x: smoothX,
           y: smoothY,
@@ -38,9 +38,9 @@ export default function SpotlightGlow() {
         }}
       />
 
-      {/* Secondary purple ambient light offset */}
+      {/* Secondary Cyan/Green Core */}
       <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full blur-[160px] opacity-20 bg-purple-600/30"
+        className="absolute w-[360px] h-[360px] rounded-full blur-[120px] opacity-15 bg-emerald-400/30"
         style={{
           x: smoothX,
           y: smoothY,

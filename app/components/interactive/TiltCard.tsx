@@ -12,7 +12,7 @@ interface TiltCardProps {
 export default function TiltCard({
   children,
   className = "",
-  glowColor = "rgba(34, 211, 238, 0.15)",
+  glowColor = "rgba(16, 185, 129, 0.15)",
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -23,10 +23,9 @@ export default function TiltCard({
   const mouseX = useSpring(x, { stiffness: 300, damping: 25 });
   const mouseY = useSpring(y, { stiffness: 300, damping: 25 });
 
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["8deg", "-8deg"]);
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-8deg", "8deg"]);
 
-  // Glare position
   const [glarePos, setGlarePos] = useState({ x: 50, y: 50 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -47,9 +46,7 @@ export default function TiltCard({
     });
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+  const handleMouseEnter = () => setIsHovered(true);
 
   const handleMouseLeave = () => {
     setIsHovered(false);
@@ -69,21 +66,37 @@ export default function TiltCard({
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl transition-colors duration-300 ${className} ${
-          isHovered ? "border-cyan-400/50 shadow-[0_0_35px_rgba(34,211,238,0.2)]" : ""
+        className={`relative overflow-hidden rounded-xl border border-emerald-500/15 bg-black/60 backdrop-blur-xl transition-all duration-300 ${className} ${
+          isHovered
+            ? "border-emerald-400/60 shadow-[0_0_35px_rgba(16,185,129,0.25)]"
+            : ""
         }`}
       >
-        {/* Dynamic Glass Glare Spotlight on mouse movement */}
+        {/* Cyber corner tech accents */}
+        <div className="pointer-events-none absolute top-1.5 left-1.5 text-[8px] font-mono text-emerald-500/40 select-none">
+          +
+        </div>
+        <div className="pointer-events-none absolute top-1.5 right-1.5 text-[8px] font-mono text-emerald-500/40 select-none">
+          +
+        </div>
+        <div className="pointer-events-none absolute bottom-1.5 left-1.5 text-[8px] font-mono text-emerald-500/40 select-none">
+          +
+        </div>
+        <div className="pointer-events-none absolute bottom-1.5 right-1.5 text-[8px] font-mono text-emerald-500/40 select-none">
+          +
+        </div>
+
+        {/* Dynamic Glare Spotlight on mouse movement */}
         <div
           className="pointer-events-none absolute inset-0 transition-opacity duration-300"
           style={{
             opacity: isHovered ? 1 : 0,
-            background: `radial-gradient(circle 220px at ${glarePos.x}% ${glarePos.y}%, ${glowColor}, transparent 70%)`,
+            background: `radial-gradient(circle 240px at ${glarePos.x}% ${glarePos.y}%, ${glowColor}, transparent 70%)`,
           }}
         />
 
         {/* Content with 3D Pop */}
-        <div style={{ transform: "translateZ(20px)" }} className="relative z-10 h-full">
+        <div style={{ transform: "translateZ(18px)" }} className="relative z-10 h-full">
           {children}
         </div>
       </motion.div>
