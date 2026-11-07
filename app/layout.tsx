@@ -8,9 +8,21 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmad Farhan Walidain",
+  title: "Ahmad Farhan Walidain — Full Stack Developer | NXONE",
   description:
-    "Portfolio of a full stack developer crafting eerie, high-performance experiences for the web.",
+    "Personal portfolio of Ahmad Farhan Walidain. Full Stack Developer specializing in Next.js, TypeScript, Node.js, Golang, and dark interactive web experiences.",
+  icons: {
+    icon: "/Logo.png",
+  },
+  keywords: [
+    "Ahmad Farhan Walidain",
+    "Farhan Opet",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Portfolio",
+  ],
 };
 
 export default function RootLayout({
@@ -19,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${spaceGrotesk.variable} bg-eerie-black text-slate-100 antialiased`}
       >

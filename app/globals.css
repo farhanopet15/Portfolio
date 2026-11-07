@@ -6,35 +6,46 @@
   --font-space-grotesk: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: #030307;
+  color-scheme: dark;
+}
+
 body {
   font-family: var(--font-space-grotesk);
+  background-color: #030307;
+  overflow-x: hidden;
 }
 
-.bg-eerie-gradient {
-  background: radial-gradient(
-      circle at top,
-      rgba(148, 163, 253, 0.02),
-      transparent 60%
-    ),
-    radial-gradient(circle at bottom, rgba(34, 211, 238, 0.03), transparent 55%),
-    #050509;
+/* Sleek Dark Motorsport Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.neon-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0.4rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 253, 0.08);
-  background: radial-gradient(
-      circle at top left,
-      rgba(34, 211, 238, 0.16),
-      transparent
-    ),
-    rgba(3, 7, 18, 0.98);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgb(148, 163, 253);
+::-webkit-scrollbar-track {
+  background: #030307;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ef4444 0%, #22d3ee 100%);
+  border-radius: 9999px;
+  border: 2px solid #030307;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f87171 0%, #38bdf8 100%);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
 }
